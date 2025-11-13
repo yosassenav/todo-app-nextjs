@@ -2,6 +2,10 @@
 
 export const TodoItem = () => {
     return (
-        <div>TodoItem</div>
+        <div>
+            <p>tarea 1</p>
+            <p>description</p>
+
+        </div>
     )
 }
