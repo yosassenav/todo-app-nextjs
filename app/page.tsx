@@ -1,11 +1,13 @@
 import { prisma } from '@/app/lib/prisma'
-import { TodoItem } from './components/TodoItem';
+import { TodoForm } from './components/TodoForm';
+//import { TodoItem } from './components/TodoItem';
 
 export default async function Home() {
 
   return (
     <div>
-      <TodoItem />
+      <h1>My Todo App</h1>
+      <TodoForm />
     </div>
   );
 }
