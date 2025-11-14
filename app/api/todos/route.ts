@@ -27,3 +27,18 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
+
+//Fetch all todos
+export async function GET() {
+    try {
+        const todos = await prisma.todo.findMany({
+            orderBy: { createdAt: 'desc' },
+        })
+        return NextResponse.json(todos, { status: 200 });
+    } catch (error: any) {
+        console.error('Error fetching todos', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    }
+}
+
+
