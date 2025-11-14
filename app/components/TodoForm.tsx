@@ -28,7 +28,7 @@ export const TodoForm = () => {
 
         //fetching the todo api
         try {
-            const res = await fetch('url', {
+            const res = await fetch('/api/todos', {
                 method: 'POST',
                 body: JSON.stringify(todo),
                 headers: { 'Content-Type': 'application/json' },
