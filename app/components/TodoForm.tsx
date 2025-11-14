@@ -18,12 +18,30 @@ export const TodoForm = () => {
         setTodo((prev) => ({ ...prev, [name]: value }));
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!todo.title.trim()) {
             alert('Todo title cannot be empty');
             return;
+        }
+
+        //fetching the todo api
+        try {
+            const res = await fetch('url', {
+                method: 'POST',
+                body: JSON.stringify(todo),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            if (res.ok) {
+                setTodo({ title: '', description: '' });
+            } else {
+                console.error('Failed to add todo')
+            }
+
+        } catch (error: any) {
+            console.error('Error in submitting todo', error)
         }
     }
 
