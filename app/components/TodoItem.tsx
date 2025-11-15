@@ -1,7 +1,5 @@
 'use client';
 
-import { headers } from "next/headers";
-
 interface Todo {
     id: number;
     title: string;
