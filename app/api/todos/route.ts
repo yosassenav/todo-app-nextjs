@@ -1,5 +1,6 @@
 import { prisma } from '@/app/lib/prisma';
 import { NextResponse } from 'next/server';
+import { todo } from 'node:test';
 
 // POST new todo
 export async function POST(req: Request) {
@@ -66,3 +67,19 @@ export async function DELETE(req: Request) {
     }
 
 }
+
+//UPDATE todo
+/*export async function UPDATE(req: Request) {
+    try {
+        const updatedTodo = await prisma.todo.update({
+            where: {}
+        })
+
+        return NextResponse.json(updatedTodo, { status: 200 });
+
+    } catch (error: any) {
+        console.error('Error updating todo', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    }
+
+}*/
