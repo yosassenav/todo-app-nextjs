@@ -8,7 +8,7 @@ interface Todo {
 
 }
 
-export const TodoForm = () => {
+export function TodoForm() {
     const [todo, setTodo] = useState<Todo>({ title: '', description: '' });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,7 +58,7 @@ export const TodoForm = () => {
             />
             <textarea
                 name="description"
-                placeholder=""
+                placeholder="description"
                 value={todo.description}
                 onChange={handleChange}
                 className=""
